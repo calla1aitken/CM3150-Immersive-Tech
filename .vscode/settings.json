@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "vrgame.sln"
+    "dotnet.defaultSolution": "CM3150-Immersive-Tech.sln"
 }
