@@ -96,7 +96,7 @@ public class PlayerInteractions : MonoBehaviour
             currentSpeed = Mathf.SmoothStep(minSpeed, maxSpeed, currentDist / maxDistance);
             currentSpeed *= Time.fixedDeltaTime;
             Vector3 direction = pickupParent.position - pickupRB.position;
-            pickupRB.velocity = direction.normalized * currentSpeed;
+            pickupRB.linearVelocity = direction.normalized * currentSpeed;
             //Rotation
             lookRot = Quaternion.LookRotation(mainCamera.transform.position - pickupRB.position);
             lookRot = Quaternion.Slerp(mainCamera.transform.rotation, lookRot, rotationSpeed * Time.fixedDeltaTime);
