@@ -1,6 +1,8 @@
 using JetBrains.Annotations;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem.Android;
 
 public class Button_VR : MonoBehaviour
 {
@@ -11,15 +13,40 @@ public class Button_VR : MonoBehaviour
     AudioSource sound;
     bool isPressed;
 
+    public Light redLight;
+   public Light greenLight;
+    public Light blueLight;
+    public Light yellow;
+
+    float timePassed = 0;
+    bool puzzleSolved = false;
+    bool waitingForInput = false;
+    
+
+
     void Start()
     {
+        timePassed = 0;
         sound = GetComponent<AudioSource>();
         isPressed = false;
+        puzzleSolved = false;
+        
+    }
+
+    void Update()
+    {
+        if (puzzleSolved == false && waitingForInput == false)
+        {
+            timePassed += Time.deltaTime;
+            Debug.Log(timePassed);
+
+        }
+        StartSequence();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isPressed)
+        if (isPressed) 
         {
             button.transform.localPosition = new Vector3(0, 0.003f, 0);
             presser = other.gameObject;
@@ -44,5 +71,24 @@ public class Button_VR : MonoBehaviour
         sphere.transform.localPosition = new Vector3(0, 1, 2);
         sphere.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         sphere.AddComponent<Rigidbody>();
+    }
+
+    public void StartSequence()
+    {
+        
+        
+
+
+       
+        if (timePassed < 2)
+        {
+            redLight.intensity = 10;
+            
+            
+        }else if (Mathf.Round(timePassed) == 2) { 
+            redLight.intensity = 0;
+            waitingForInput = true;
+            button = GameObject.Find("redbutton");
+        }
     }
 }

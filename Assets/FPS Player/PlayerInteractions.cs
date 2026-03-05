@@ -60,8 +60,8 @@ public class PlayerInteractions : MonoBehaviour
         if (Input.GetButtonDown("Fire2"))
         {
 
-        }
-        */
+        }*/
+        
 
 
     }
