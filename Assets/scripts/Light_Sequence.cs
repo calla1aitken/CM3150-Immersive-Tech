@@ -13,7 +13,7 @@ public class Light_Switch : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        
 
     }
 
@@ -21,5 +21,10 @@ public class Light_Switch : MonoBehaviour
     void Update()
     {
 
+    }
+    public void SwitchOn()
+    {
+        redLight.intensity = 50;
+        Debug.Log("erwrewr");
     }
 }
