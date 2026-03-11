@@ -1763,10 +1763,8 @@ MonoBehaviour:
   blueLight: {fileID: 0}
   greenLight: {fileID: 0}
   yellowLight: {fileID: 0}
-  redButton: {fileID: 0}
-  blueButton: {fileID: 0}
-  greenButton: {fileID: 0}
-  yellowButton: {fileID: 0}
+  sequenceNotComplete: 1
+  timer: 0
 --- !u!1 &263426780
 GameObject:
   m_ObjectHideFlags: 0
@@ -3390,10 +3388,8 @@ MonoBehaviour:
   blueLight: {fileID: 0}
   greenLight: {fileID: 0}
   yellowLight: {fileID: 0}
-  redButton: {fileID: 0}
-  blueButton: {fileID: 0}
-  greenButton: {fileID: 0}
-  yellowButton: {fileID: 0}
+  sequenceNotComplete: 1
+  timer: 0
 --- !u!1001 &550758735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4370,10 +4366,8 @@ MonoBehaviour:
   blueLight: {fileID: 0}
   greenLight: {fileID: 0}
   yellowLight: {fileID: 0}
-  redButton: {fileID: 0}
-  blueButton: {fileID: 0}
-  greenButton: {fileID: 0}
-  yellowButton: {fileID: 0}
+  sequenceNotComplete: 1
+  timer: 0
 --- !u!4 &754587454 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 202364688, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -5354,10 +5348,8 @@ MonoBehaviour:
   blueLight: {fileID: 0}
   greenLight: {fileID: 0}
   yellowLight: {fileID: 0}
-  redButton: {fileID: 0}
-  blueButton: {fileID: 0}
-  greenButton: {fileID: 0}
-  yellowButton: {fileID: 0}
+  sequenceNotComplete: 1
+  timer: 0
 --- !u!4 &952849810 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4385080170327957909, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
@@ -8751,9 +8743,9 @@ MonoBehaviour:
   onPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 528867513}
-        m_TargetAssemblyTypeName: Light_Switch, Assembly-CSharp
-        m_MethodName: SwitchOn
+      - m_Target: {fileID: 1985918423}
+        m_TargetAssemblyTypeName: LightAnimator, Assembly-CSharp
+        m_MethodName: Begin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8765,19 +8757,7 @@ MonoBehaviour:
         m_CallState: 2
   onReleased:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 528867513}
-        m_TargetAssemblyTypeName: Light_Switch, Assembly-CSharp
-        m_MethodName: SwitchOn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!4 &1445980640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7425742597038686072, guid: 0f128140f84d9dc4a98508d195ac256c, type: 3}
@@ -10919,6 +10899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1985918422}
+  - component: {fileID: 1985918423}
   m_Layer: 0
   m_Name: lanterns
   m_TagString: Untagged
@@ -10945,6 +10926,25 @@ Transform:
   - {fileID: 1167226118}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1985918423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985918421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34fbef489414174995df2e5eb44828a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  lightTime: 1
+  lights:
+  - {fileID: 730622918}
+  - {fileID: 242956550}
+  - {fileID: 528867512}
+  - {fileID: 947035309}
+  counter: 0
 --- !u!1001 &1991898514
 PrefabInstance:
   m_ObjectHideFlags: 0
