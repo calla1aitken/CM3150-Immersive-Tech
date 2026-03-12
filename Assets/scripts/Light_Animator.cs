@@ -10,7 +10,7 @@ public class LightAnimator : MonoBehaviour
 
     public float lightTime = 3;
 
-    int currentLight = 0;
+    int currentLight;
 
     public Light[] lights;
     int[] sequence = new int[8];
@@ -18,44 +18,63 @@ public class LightAnimator : MonoBehaviour
 
     public void Begin()
     {
+        
+        Debug.Log("Help");
         StartCoroutine("ChangeLight");
+        
     }
 
     IEnumerator ChangeLight()
     {
-        yield return new WaitForSeconds(lightTime);
-
-        Debug.Log("Changing light to number " + currentLight);
-
-        // disable the current light
-        lights[currentLight].intensity = 0;
-
         // change to the next random light
         int randomIndex = Random.Range(0, 4);
         currentLight = randomIndex;
+        Debug.Log("the index is is" +randomIndex);
+        Debug.Log("the curent is is" +currentLight);
         
+        // disable the current light
+       
         lights[currentLight].intensity = 50;
 
         //start again if 8 lights have not flashed
-        if (counter < 8)
+        
+        yield return new WaitForSeconds(lightTime);
+        lights[currentLight].intensity = 0;
+        yield return new WaitForSeconds(lightTime);
+
+        
+        
+        
+        counter++;
+        Debug.Log("this is counter" + counter);
+        
+            
+       
+        if (counter <8)
         {
-            counter++;
+            
+            sequence[counter] = currentLight;
             StartCoroutine("ChangeLight");
-            Addtoarray(currentLight);
+       
         }
         else
         {
             lights[currentLight].intensity = 0;
+            String sequenceFull = "";
+            String sequenceToString = "";
+            lights[currentLight].intensity = 0;
             for (int i = 0; i < 8; i++)
             {
-                Debug.Log(sequence[i]);
+                sequenceFull = sequenceFull + sequence[i] +","; 
+                
             }
-
+            Debug.Log(sequenceFull);
+            
 
         }
 
     }
     public void Addtoarray(int currentLight){
-        sequence[counter] = currentLight;
+        
     }
 }

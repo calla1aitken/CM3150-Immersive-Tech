@@ -10941,9 +10941,9 @@ MonoBehaviour:
   lightTime: 1
   lights:
   - {fileID: 730622918}
+  - {fileID: 947035309}
   - {fileID: 242956550}
   - {fileID: 528867512}
-  - {fileID: 947035309}
   counter: 0
 --- !u!1001 &1991898514
 PrefabInstance:
