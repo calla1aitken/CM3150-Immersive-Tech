@@ -31,8 +31,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Hand_Armature_R|Fist_R
-      takeName: Hand_Armature_R|Fist_R
+      name: Hand_Armature_R|Rest_R
+      takeName: Hand_Armature_R|Rest_R
       internalID: -3984778719749770948
       firstFrame: 0
       lastFrame: 1
@@ -147,11 +147,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Hand_Armature_R|Rest_R
-      takeName: Hand_Armature_R|Rest_R
+      name: Hand_Armature_R|Fist_R
+      takeName: Hand_Armature_R|Fist_R
       internalID: 5098606655608078164
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 0
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
