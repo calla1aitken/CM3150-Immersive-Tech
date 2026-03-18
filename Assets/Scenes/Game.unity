@@ -1270,7 +1270,7 @@ GameObject:
   - component: {fileID: 146038075}
   - component: {fileID: 146038074}
   m_Layer: 0
-  m_Name: trigger
+  m_Name: yellowrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1306,10 +1306,24 @@ MonoBehaviour:
   deadTime: 1
   onPressed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1985918423}
+        m_TargetAssemblyTypeName: LightAnimator, Assembly-CSharp
+        m_MethodName: GetButtonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onReleased:
     m_PersistentCalls:
       m_Calls: []
+  buttonPress: 0
+  lanterns: {fileID: 1985918423}
 --- !u!65 &146038075
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9940,7 +9954,7 @@ GameObject:
   - component: {fileID: 1429078002}
   - component: {fileID: 1429078001}
   m_Layer: 0
-  m_Name: trigger
+  m_Name: bluetrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9979,7 +9993,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1985918423}
         m_TargetAssemblyTypeName: LightAnimator, Assembly-CSharp
-        m_MethodName: Begin
+        m_MethodName: GetButtonPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9992,6 +10006,8 @@ MonoBehaviour:
   onReleased:
     m_PersistentCalls:
       m_Calls: []
+  buttonPress: 0
+  lanterns: {fileID: 1985918423}
 --- !u!65 &1429078002
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10228,6 +10244,8 @@ MonoBehaviour:
   onReleased:
     m_PersistentCalls:
       m_Calls: []
+  buttonPress: 0
+  lanterns: {fileID: 0}
 --- !u!4 &1445980640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7425742597038686072, guid: 0f128140f84d9dc4a98508d195ac256c, type: 3}
@@ -11809,7 +11827,7 @@ GameObject:
   - component: {fileID: 1791458583}
   - component: {fileID: 1791458582}
   m_Layer: 0
-  m_Name: trigger
+  m_Name: redtrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11861,6 +11879,8 @@ MonoBehaviour:
   onReleased:
     m_PersistentCalls:
       m_Calls: []
+  buttonPress: 0
+  lanterns: {fileID: 1985918423}
 --- !u!65 &1791458583
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12756,11 +12776,12 @@ MonoBehaviour:
   - {fileID: 242956550}
   - {fileID: 528867512}
   buttons:
-  - {fileID: 924988001}
-  - {fileID: 445795851}
-  - {fileID: 1654816108}
-  - {fileID: 524731437}
-  counter: 0
+  - {fileID: 1429078001}
+  - {fileID: 146038074}
+  - {fileID: 2108003276}
+  - {fileID: 1791458582}
+  lightscounter: 0
+  buttonscounter: 0
 --- !u!1001 &1991898514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13232,7 +13253,7 @@ GameObject:
   - component: {fileID: 2108003277}
   - component: {fileID: 2108003276}
   m_Layer: 0
-  m_Name: trigger
+  m_Name: greentrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13268,10 +13289,24 @@ MonoBehaviour:
   deadTime: 1
   onPressed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1985918423}
+        m_TargetAssemblyTypeName: LightAnimator, Assembly-CSharp
+        m_MethodName: GetButtonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onReleased:
     m_PersistentCalls:
       m_Calls: []
+  buttonPress: 0
+  lanterns: {fileID: 1985918423}
 --- !u!65 &2108003277
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -13,7 +13,8 @@ public class VRButton : MonoBehaviour
     //public Unity Events we can use in the editor and tie other functions to.
     public UnityEvent onPressed, onReleased;
 
-   
+    public bool buttonPress = false;
+    public LightAnimator lanterns;
 
     //Checks if the current collider entering is the Button and sets off OnPressed event.
     private void OnTriggerEnter(Collider other)
@@ -22,6 +23,9 @@ public class VRButton : MonoBehaviour
         {
             onPressed.Invoke();
             Debug.Log("I have been pressed");
+            this.buttonPress = true;
+            Debug.Log(buttonPress);
+            lanterns.GetButtonPress(other);
 
         }
     }
@@ -36,6 +40,8 @@ public class VRButton : MonoBehaviour
             onReleased.Invoke();
             Debug.Log("I have been released");
             StartCoroutine(WaitForDeadTime());
+            this.buttonPress = false;
+            Debug.Log(buttonPress);
         }
     }
 
@@ -46,6 +52,8 @@ public class VRButton : MonoBehaviour
         yield return new WaitForSeconds(deadTime);
         _deadTimeActive = false;
     }
+
+
 
 
 }
