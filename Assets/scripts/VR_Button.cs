@@ -23,9 +23,9 @@ public class VRButton : MonoBehaviour
         {
             onPressed.Invoke();
             Debug.Log("I have been pressed");
-            this.buttonPress = true;
+            
             Debug.Log(buttonPress);
-            lanterns.GetButtonPress(other);
+            //lanterns.GetButtonPress(other);
 
         }
     }
@@ -40,7 +40,7 @@ public class VRButton : MonoBehaviour
             onReleased.Invoke();
             Debug.Log("I have been released");
             StartCoroutine(WaitForDeadTime());
-            this.buttonPress = false;
+         
             Debug.Log(buttonPress);
         }
     }
@@ -51,6 +51,18 @@ public class VRButton : MonoBehaviour
         _deadTimeActive = true;
         yield return new WaitForSeconds(deadTime);
         _deadTimeActive = false;
+    }
+
+    public void isPressed()
+    {
+        this.buttonPress = true;
+      
+    }
+
+    public void isNotPressed()
+    {
+        this.buttonPress = false;
+    
     }
 
 

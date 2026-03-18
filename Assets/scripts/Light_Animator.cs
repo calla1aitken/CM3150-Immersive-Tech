@@ -9,46 +9,23 @@ using Random = UnityEngine.Random;
 [System.Serializable]
 public class LightAnimator : MonoBehaviour
 {
-
-
-    public float lightTime = 3;
+    float lightTime = 3;
 
     int currentLight;
     int currentButton;
-
-    public bool buttonPress;
 
     public Light[] lights;
     public VRButton[] buttons = new VRButton[4];
     int[] sequence = new int[8];
     public int lightscounter = 0;
     public int buttonscounter = 0;
+    String bsequenceFull = "";
     VRButton thisbutton;
 
     public void Begin()
     {
-
         StartCoroutine("ChangeLight");
     }
-
-
-    public void GetButtonPress(Collider collider)
-    {
-        if (collider = thisbutton.GetComponent<Collider>())
-        {
-            Debug.Log("correct press");
-            buttonPress = true;
-        }
-        else
-        {
-            Debug.Log("wrong press");
-            buttonPress = false;
-
-            
-        }
-        
-    }
-
     IEnumerator ChangeLight()
     {
         // change to the next random light
@@ -63,18 +40,18 @@ public class LightAnimator : MonoBehaviour
         yield return new WaitForSeconds(lightTime);
 
         //start again if 8 lights have not flashed
-        lightscounter++;
+        
         
         if (lightscounter <8)
         { 
             //Adds the current light's number to an array
             sequence[lightscounter] = currentLight;
+            lightscounter++;
             StartCoroutine("ChangeLight");
         }
         else
         {
             //Print full sequence to the console 
-            lights[currentLight].intensity = 0;
             String sequenceFull = "";
             lights[currentLight].intensity = 0;
             for (int i = 0; i < 8; i++)
@@ -91,39 +68,24 @@ public class LightAnimator : MonoBehaviour
     IEnumerator ButtonInputs()
     {
 
-        String sequenceFull = "";
-         lights[currentLight].intensity = 0;
+        lights[currentLight].intensity = 0;
 
+        currentButton = sequence[buttonscounter];
 
+        thisbutton = buttons[currentButton];
+        
+        bsequenceFull = bsequenceFull + currentButton + ","; 
+            
+        yield return new WaitWhile(() => thisbutton.buttonPress == false);
+        buttonscounter++;
 
-            currentButton = sequence[buttonscounter];
+        if (buttonscounter < 8){
+            Debug.Log("correct choice");
+            StartCoroutine("ButtonInputs");
+        }
+        else{
+            Debug.Log("You did ithbhcxbvhThe button sequence is " + bsequenceFull);
+        };
 
-            thisbutton = buttons[currentButton];
-            Debug.Log("pRESS" + thisbutton);
-            sequenceFull = sequenceFull + currentButton + ","; buttonscounter++;
-            yield return new WaitUntil(() => buttonPress == true);
-
-
-            if (buttonscounter < 8)
-            {
-                if (buttonPress == true) {
-                    buttonPress = false;
-                    StartCoroutine("ButtonInputs");
-                } else
-                {
-                    Debug.Log("waiting");
-                    yield return new WaitForSeconds(1);
-                }
-
-            }
-            else
-            {
-                Debug.Log("You did ithbhcxbvhThe button sequence is " + sequenceFull);
-
-            };
-
-        } 
-
-
-
+    } 
 }

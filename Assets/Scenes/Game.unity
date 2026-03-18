@@ -1307,9 +1307,9 @@ MonoBehaviour:
   onPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1985918423}
-        m_TargetAssemblyTypeName: LightAnimator, Assembly-CSharp
-        m_MethodName: GetButtonPress
+      - m_Target: {fileID: 146038074}
+        m_TargetAssemblyTypeName: VRButton, Assembly-CSharp
+        m_MethodName: isPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1321,7 +1321,19 @@ MonoBehaviour:
         m_CallState: 2
   onReleased:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 146038074}
+        m_TargetAssemblyTypeName: VRButton, Assembly-CSharp
+        m_MethodName: isNotPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   buttonPress: 0
   lanterns: {fileID: 1985918423}
 --- !u!65 &146038075
@@ -9991,9 +10003,24 @@ MonoBehaviour:
   onPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1985918423}
-        m_TargetAssemblyTypeName: LightAnimator, Assembly-CSharp
-        m_MethodName: GetButtonPress
+      - m_Target: {fileID: 1429078001}
+        m_TargetAssemblyTypeName: VRButton, Assembly-CSharp
+        m_MethodName: isPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  onReleased:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1429078001}
+        m_TargetAssemblyTypeName: VRButton, Assembly-CSharp
+        m_MethodName: isNotPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10003,9 +10030,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onReleased:
-    m_PersistentCalls:
-      m_Calls: []
   buttonPress: 0
   lanterns: {fileID: 1985918423}
 --- !u!65 &1429078002
@@ -11864,9 +11888,9 @@ MonoBehaviour:
   onPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1985918423}
-        m_TargetAssemblyTypeName: LightAnimator, Assembly-CSharp
-        m_MethodName: GetButtonPress
+      - m_Target: {fileID: 1791458582}
+        m_TargetAssemblyTypeName: VRButton, Assembly-CSharp
+        m_MethodName: isPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11878,7 +11902,19 @@ MonoBehaviour:
         m_CallState: 2
   onReleased:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1791458582}
+        m_TargetAssemblyTypeName: VRButton, Assembly-CSharp
+        m_MethodName: isNotPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   buttonPress: 0
   lanterns: {fileID: 1985918423}
 --- !u!65 &1791458583
@@ -12768,8 +12804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34fbef489414174995df2e5eb44828a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  lightTime: 1
-  buttonPress: 0
   lights:
   - {fileID: 730622918}
   - {fileID: 947035309}
@@ -13290,9 +13324,9 @@ MonoBehaviour:
   onPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1985918423}
-        m_TargetAssemblyTypeName: LightAnimator, Assembly-CSharp
-        m_MethodName: GetButtonPress
+      - m_Target: {fileID: 2108003276}
+        m_TargetAssemblyTypeName: VRButton, Assembly-CSharp
+        m_MethodName: isPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13304,7 +13338,19 @@ MonoBehaviour:
         m_CallState: 2
   onReleased:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2108003276}
+        m_TargetAssemblyTypeName: VRButton, Assembly-CSharp
+        m_MethodName: isNotPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   buttonPress: 0
   lanterns: {fileID: 1985918423}
 --- !u!65 &2108003277
