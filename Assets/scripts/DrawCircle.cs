@@ -3,8 +3,8 @@ using UnityEngine;
 public class DrawCircle : MonoBehaviour
 {
     public LineRenderer lineRenderer;
-    public float radius;
-    public int subdivisions;
+    public float radius = 5f;
+    public int subdivisions = 10;
 
     void MakeCircle()
 
