@@ -31,7 +31,7 @@ public class LightAnimator : MonoBehaviour
         // change to the next random light
         int randomIndex = Random.Range(0, 4);
         currentLight = randomIndex;
-        lights[currentLight].intensity = 50;
+        lights[currentLight].intensity = 10;
 
         
         // disable the current light
