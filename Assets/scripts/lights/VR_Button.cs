@@ -16,6 +16,8 @@ public class VRButton : MonoBehaviour
     public bool buttonPress = false;
     public LightAnimator lanterns;
 
+    public bool iscorrectbutton = false;
+
     //Checks if the current collider entering is the Button and sets off OnPressed event.
     private void OnTriggerEnter(Collider other)
     {
@@ -53,9 +55,27 @@ public class VRButton : MonoBehaviour
         _deadTimeActive = false;
     }
 
+    public void isCorrectButton()
+    {
+        iscorrectbutton = true;
+    }
+
+
+
     public void isPressed()
     {
-        this.buttonPress = true;
+        if (iscorrectbutton == true)
+        {
+            this.buttonPress = true;
+            Debug.Log("this is the correct button");
+            iscorrectbutton = false;
+        } else
+        {
+            Debug.Log("This is the wrong button. Press the Start button to try again.");
+            lanterns.pressedWrongButton();
+           
+        }
+        
       
     }
 

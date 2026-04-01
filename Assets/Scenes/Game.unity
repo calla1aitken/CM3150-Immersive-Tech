@@ -2015,7 +2015,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f24707a5f5b048c4ea23e20f4e68bec0, type: 2}
+  - {fileID: 2100000, guid: ceb6dd27c336bcc42b366767308dfcb5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3656,6 +3656,7 @@ MonoBehaviour:
         m_CallState: 2
   buttonPress: 0
   lanterns: {fileID: 1985918423}
+  iscorrectbutton: 0
 --- !u!65 &146038075
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7834,6 +7835,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: star1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 90903ee4f2fb1d148a98af446283493e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -10487,6 +10492,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 14125b656fb71fd4d9d65bfe344107ad, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 830d28b607e09a2479e2005c2eb5c75e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -10872,8 +10881,8 @@ MonoBehaviour:
   materials:
   - {fileID: 2100000, guid: bcc245f5f0456264b8344a84e802e4b2, type: 2}
   - {fileID: 2100000, guid: 1ddaf4fbb5f30eb4e8305021fb47eab7, type: 2}
-  - {fileID: 2100000, guid: 54fdb5ab02d8ad2499a01ceeba93e38d, type: 2}
-  - {fileID: 2100000, guid: f24707a5f5b048c4ea23e20f4e68bec0, type: 2}
+  - {fileID: 2100000, guid: 3ce75a397b2b9f34da02197d629ef81a, type: 2}
+  - {fileID: 2100000, guid: ceb6dd27c336bcc42b366767308dfcb5, type: 2}
   - {fileID: 2100000, guid: 3d94c60adcaa3b848902346a338f6e27, type: 2}
 --- !u!1 &481901294
 GameObject:
@@ -14070,7 +14079,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 54fdb5ab02d8ad2499a01ceeba93e38d, type: 2}
+  - {fileID: 2100000, guid: 3ce75a397b2b9f34da02197d629ef81a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15936,7 +15945,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 2
-  m_Color: {r: 0, g: 0.015872955, b: 1, a: 1}
+  m_Color: {r: 0.35283017, g: 0.49026957, b: 1, a: 1}
   m_Intensity: 0
   m_Range: 3
   m_SpotAngle: 30
@@ -27024,8 +27033,8 @@ MonoBehaviour:
   materials:
   - {fileID: 2100000, guid: bcc245f5f0456264b8344a84e802e4b2, type: 2}
   - {fileID: 2100000, guid: 1ddaf4fbb5f30eb4e8305021fb47eab7, type: 2}
-  - {fileID: 2100000, guid: 54fdb5ab02d8ad2499a01ceeba93e38d, type: 2}
-  - {fileID: 2100000, guid: f24707a5f5b048c4ea23e20f4e68bec0, type: 2}
+  - {fileID: 2100000, guid: 3ce75a397b2b9f34da02197d629ef81a, type: 2}
+  - {fileID: 2100000, guid: ceb6dd27c336bcc42b366767308dfcb5, type: 2}
   - {fileID: 2100000, guid: 3d94c60adcaa3b848902346a338f6e27, type: 2}
 --- !u!65 &1221000360
 BoxCollider:
@@ -30642,6 +30651,7 @@ MonoBehaviour:
         m_CallState: 2
   buttonPress: 0
   lanterns: {fileID: 1985918423}
+  iscorrectbutton: 0
 --- !u!65 &1429078002
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30993,6 +31003,7 @@ MonoBehaviour:
       m_Calls: []
   buttonPress: 0
   lanterns: {fileID: 0}
+  iscorrectbutton: 0
 --- !u!1 &1442699800
 GameObject:
   m_ObjectHideFlags: 0
@@ -31772,8 +31783,8 @@ MonoBehaviour:
   materials:
   - {fileID: 2100000, guid: bcc245f5f0456264b8344a84e802e4b2, type: 2}
   - {fileID: 2100000, guid: 1ddaf4fbb5f30eb4e8305021fb47eab7, type: 2}
-  - {fileID: 2100000, guid: 54fdb5ab02d8ad2499a01ceeba93e38d, type: 2}
-  - {fileID: 2100000, guid: f24707a5f5b048c4ea23e20f4e68bec0, type: 2}
+  - {fileID: 2100000, guid: 3ce75a397b2b9f34da02197d629ef81a, type: 2}
+  - {fileID: 2100000, guid: ceb6dd27c336bcc42b366767308dfcb5, type: 2}
   - {fileID: 2100000, guid: 3d94c60adcaa3b848902346a338f6e27, type: 2}
 --- !u!65 &1485144811
 BoxCollider:
@@ -32731,7 +32742,7 @@ Transform:
   m_GameObject: {fileID: 1580891501}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.46097767, z: -0, w: 0.8874118}
-  m_LocalPosition: {x: -127.25, y: -12.73, z: -127.06}
+  m_LocalPosition: {x: -164.89, y: -12.73, z: -83.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33731,6 +33742,7 @@ GameObject:
   - component: {fileID: 1634970154}
   - component: {fileID: 1634970153}
   - component: {fileID: 1634970152}
+  - component: {fileID: 1634970155}
   m_Layer: 0
   m_Name: imagemachine 1
   m_TagString: Untagged
@@ -33832,6 +33844,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634970150}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1634970155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634970150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6cf02ccbc12b2648adc2a2d5e9c7b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  correctImage: {fileID: 2100000, guid: 3d94c60adcaa3b848902346a338f6e27, type: 2}
+  thisLeverCollider: {fileID: 1485144808}
 --- !u!1 &1639367620
 GameObject:
   m_ObjectHideFlags: 0
@@ -36937,6 +36963,7 @@ MonoBehaviour:
         m_CallState: 2
   buttonPress: 0
   lanterns: {fileID: 1985918423}
+  iscorrectbutton: 0
 --- !u!65 &1791458583
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40979,8 +41006,7 @@ MonoBehaviour:
   - {fileID: 146038074}
   - {fileID: 2108003276}
   - {fileID: 1791458582}
-  lightscounter: 0
-  buttonscounter: 0
+  Star: {fileID: 336343219}
 --- !u!1 &1990950361
 GameObject:
   m_ObjectHideFlags: 0
@@ -43565,6 +43591,7 @@ MonoBehaviour:
         m_CallState: 2
   buttonPress: 0
   lanterns: {fileID: 1985918423}
+  iscorrectbutton: 0
 --- !u!65 &2108003277
 BoxCollider:
   m_ObjectHideFlags: 0

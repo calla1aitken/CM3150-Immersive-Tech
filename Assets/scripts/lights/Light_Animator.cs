@@ -9,22 +9,36 @@ using Random = UnityEngine.Random;
 [System.Serializable]
 public class LightAnimator : MonoBehaviour
 {
-    float lightTime = 3;
+    float lightTime = 2;
 
+//used for referncing items in arrays
     int currentLight;
     int currentButton;
+    VRButton thisbutton;
 
+//arrays
     public Light[] lights;
     public VRButton[] buttons = new VRButton[4];
     int[] sequence = new int[8];
-    public int lightscounter = 0;
-    public int buttonscounter = 0;
-    String bsequenceFull = "";
-    VRButton thisbutton;
 
+//counters for light/button sequences
+     int lightscounter = 0;
+     int buttonscounter = 0;
+    String bsequenceFull = "";
+
+    //if wrong button is pressed 
+     bool pressedwrongbutton;
+
+    public GameObject Star;
+    
     public void Begin()
     {
+        
+        pressedwrongbutton = false;
+        buttonscounter = 0;
+        lightscounter = 0;
         StartCoroutine("ChangeLight");
+        
     }
     IEnumerator ChangeLight()
     {
@@ -42,7 +56,7 @@ public class LightAnimator : MonoBehaviour
         //start again if 8 lights have not flashed
         
         
-        if (lightscounter <8)
+        if (lightscounter <7)
         { 
             //Adds the current light's number to an array
             sequence[lightscounter] = currentLight;
@@ -51,6 +65,7 @@ public class LightAnimator : MonoBehaviour
         }
         else
         {
+            sequence[lightscounter] = currentLight;
             //Print full sequence to the console 
             String sequenceFull = "";
             lights[currentLight].intensity = 0;
@@ -67,25 +82,39 @@ public class LightAnimator : MonoBehaviour
 
     IEnumerator ButtonInputs()
     {
+        if (pressedwrongbutton == false)
+        {
+            lights[currentLight].intensity = 0;
 
-        lights[currentLight].intensity = 0;
+            currentButton = sequence[buttonscounter];
 
-        currentButton = sequence[buttonscounter];
+            thisbutton = buttons[currentButton];
 
-        thisbutton = buttons[currentButton];
-        
-        bsequenceFull = bsequenceFull + currentButton + ","; 
+            thisbutton.isCorrectButton();
             
-        yield return new WaitWhile(() => thisbutton.buttonPress == false);
-        buttonscounter++;
+            bsequenceFull = bsequenceFull + currentButton + ","; 
 
-        if (buttonscounter < 8){
-            Debug.Log("correct choice");
-            StartCoroutine("ButtonInputs");
+            
+            yield return new WaitWhile(() => thisbutton.buttonPress == false);
+            buttonscounter++;
+
+            if (buttonscounter < 8){
+                StartCoroutine("ButtonInputs");
+            }
+            else{
+                Debug.Log("You did it. The button sequence is " + bsequenceFull);
+                Star.SetActive(true);
+            };
         }
-        else{
-            Debug.Log("You did ithbhcxbvhThe button sequence is " + bsequenceFull);
-        };
-
+        else
+        {
+            Debug.Log("You pressed the wrong button. Press start to try sgain");
+        }
+    
     } 
+
+    public void pressedWrongButton()
+    {
+        pressedwrongbutton = true;
+    }
 }
