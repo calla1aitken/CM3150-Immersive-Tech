@@ -1,6 +1,6 @@
 using System.Collections;
 using Unity.VisualScripting;
-using UnityEditor.SpeedTree.Importer;
+
 using UnityEngine;
 
 public class ShutterAnimation : MonoBehaviour
