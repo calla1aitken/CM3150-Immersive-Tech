@@ -103,13 +103,22 @@ public class LightAnimator : MonoBehaviour
             }
             else{
                 Debug.Log("You did it. The button sequence is " + bsequenceFull);
+                
                 Star.SetActive(true);
             };
         }
         else
         {
-            Debug.Log("You pressed the wrong button. Press start to try sgain");
+            Debug.Log("You pressed the wrong button. Press start to try again");
+            lights[1].intensity = 20;
         }
+                    
+                      
+            
+                 
+                    
+                
+        
     
     } 
 

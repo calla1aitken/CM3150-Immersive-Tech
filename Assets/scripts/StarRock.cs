@@ -3,7 +3,8 @@ using UnityEngine;
 public class StarRock : MonoBehaviour
 {
 
-    public GameObject star;
+    public GameObject puzzlestar;
+    public GameObject thisstar;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,9 +20,11 @@ public class StarRock : MonoBehaviour
 
     private void OnTriggerEnter(Collider collisioninfo)
     {
-        if (collisioninfo.gameObject == star)
+        if (collisioninfo.gameObject == puzzlestar)
         {
             Debug.Log("heh");
+            thisstar.SetActive(true);
+            puzzlestar.SetActive(false);
         }
     }
-    }
+}
