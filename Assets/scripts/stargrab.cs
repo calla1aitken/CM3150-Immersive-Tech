@@ -15,11 +15,11 @@ public class stargrab : MonoBehaviour
     public GameObject star;
     Vector3 starlocation;
     Quaternion starrotation;
-
     private void Start()
     {
         starlocation = star.transform.position;
         starrotation = star.transform.rotation;
+
     }
     private void Awake()
     {
@@ -61,4 +61,5 @@ public class stargrab : MonoBehaviour
 
     }
 
-}
+    
+    }

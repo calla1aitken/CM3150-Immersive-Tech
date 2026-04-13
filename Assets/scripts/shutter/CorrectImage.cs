@@ -1,21 +1,37 @@
 using NUnit.Framework.Constraints;
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class CorrectImage : MonoBehaviour
-{ 
-    public Material correctImage;
-    
-   
-    public GameObject thisLeverCollider;
- 
+{
+
+    public MeshRenderer correctImageRenderer;
+    public MeshRenderer thisRenderer;
+    Material correctImage;
+    Material thisImage;
+
+    public Boolean isCorrect;
+
+
+    public GameObject star;
+
+    void Start()
+    {
+        correctImage = correctImageRenderer.material;
+        isCorrect = false;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (this.GetComponent<Material>() == correctImage)
+        thisImage = thisRenderer.material;
+       
+        if (thisImage.name == correctImage.name)
         {
-            Debug.Log("hfjh");
+            Debug.Log("Correct Image");
+            isCorrect = true;
+            star.SetActive(true);
         }
     }
 }
