@@ -6,10 +6,10 @@ using UnityEngine;
 public class ShutterAnimation : MonoBehaviour
 {
    
-    public Collider lever;
-    public Animator shutteranimator;
+    [SerializeField] Collider lever;
+    [SerializeField] Animator shutteranimator;
 
-    public GameObject image;
+    [SerializeField] GameObject image;
     public Material[] materials = new Material[5];
     int counter = 0;
     float timetowait = 1.5f;

@@ -6,15 +6,15 @@ using UnityEngine;
 public class CorrectImage : MonoBehaviour
 {
 
-    public MeshRenderer correctImageRenderer;
-    public MeshRenderer thisRenderer;
+    [SerializeField] MeshRenderer correctImageRenderer;
+    [SerializeField] MeshRenderer thisRenderer;
     Material correctImage;
     Material thisImage;
 
     public Boolean isCorrect;
 
 
-    public GameObject star;
+    [SerializeField] GameObject star;
 
     void Start()
     {

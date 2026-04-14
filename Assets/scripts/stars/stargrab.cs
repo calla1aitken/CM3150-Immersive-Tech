@@ -10,9 +10,9 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class stargrab : MonoBehaviour
 {
    
-    public XRGrabInteractable starGrab;
-    public Rigidbody starbody;
-    public GameObject star;
+    [SerializeField] XRGrabInteractable starGrab;
+    [SerializeField] Rigidbody starbody;
+    [SerializeField] GameObject star;
     Vector3 starlocation;
     Quaternion starrotation;
     private void Start()

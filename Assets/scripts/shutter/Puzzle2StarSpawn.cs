@@ -5,11 +5,11 @@ using UnityEngine;
 public class Puzzle2StarSpawn : MonoBehaviour
 {
 
-    public CorrectImage machine1;
-    public CorrectImage machine2;
-    public CorrectImage machine3;
+    [SerializeField] CorrectImage machine1;
+    [SerializeField] CorrectImage machine2;
+    [SerializeField] CorrectImage machine3;
 
-    public GameObject Star;
+    [SerializeField] GameObject Star;
 
     void Update()
     {

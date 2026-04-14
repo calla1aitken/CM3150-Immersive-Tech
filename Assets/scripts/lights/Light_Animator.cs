@@ -29,7 +29,7 @@ public class LightAnimator : MonoBehaviour
     //if wrong button is pressed 
      bool pressedwrongbutton;
 
-    public GameObject Star;
+    [SerializeField] GameObject Star;
     
     public void Begin()
     {

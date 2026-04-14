@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class DrawCircle : MonoBehaviour
 {
-    public LineRenderer lineRenderer;
-    public float radius = 5f;
-    public int subdivisions = 10;
+    [SerializeField] LineRenderer lineRenderer;
+    [SerializeField] float radius = 5f;
+    [SerializeField] int subdivisions = 10;
 
     void MakeCircle()
 

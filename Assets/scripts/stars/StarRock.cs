@@ -3,20 +3,8 @@ using UnityEngine;
 public class StarRock : MonoBehaviour
 {
 
-    public GameObject puzzlestar;
-    public GameObject thisstar;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] GameObject puzzlestar;
+    [SerializeField] GameObject thisstar;
 
     private void OnTriggerEnter(Collider collisioninfo)
     {
