@@ -11,13 +11,14 @@ public class Lock : MonoBehaviour
     {
         locked = true;
         door.GetComponent<Rigidbody>().isKinematic = true;
-        handle.GetComponent<BoxCollider>().enabled = false;
+        //handle.GetComponent<BoxCollider>().enabled = false;
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "key" && locked)
         {
+            Debug.Log("FR");
             UnlockDoor();
         }
     }
@@ -25,7 +26,7 @@ public class Lock : MonoBehaviour
     private void UnlockDoor()
     {
         door.GetComponent<Rigidbody>().isKinematic = false;
-        handle.GetComponent<BoxCollider>().enabled = true;
+       // handle.GetComponent<BoxCollider>().enabled = true;
         this.GetComponent<Rigidbody>().isKinematic = false;
         locked = false;
     }
