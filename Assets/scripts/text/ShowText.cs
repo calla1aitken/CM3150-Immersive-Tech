@@ -10,7 +10,7 @@ public class ShowText : MonoBehaviour
     public RawImage Image2;
     public RawImage Image3;
     public Canvas canvas;
-    float delaytime = 2;
+    float delaytime = 3;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -28,9 +28,12 @@ public class ShowText : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Image1.gameObject.SetActive(false);
-            Image2.gameObject.SetActive(false);
-            Image3.gameObject.SetActive(false);
-
+            if(Image2 != null){
+                Image2.gameObject.SetActive(false);
+            }
+            if(Image3 != null){
+                Image3.gameObject.SetActive(false);
+            }
         }
 
     }
