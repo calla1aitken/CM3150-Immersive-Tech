@@ -5,16 +5,17 @@ using UnityEngine.Events;
 
 public class VRButton : MonoBehaviour
 {
-    //Time that the button is set inactive after release
-    public float deadTime = 1.0f;
-    //Bool used to lock down button during its set dead time
+
+ 
     private bool _deadTimeActive = false;
 
-    //public Unity Events we can use in the editor and tie other functions to.
+  
     public UnityEvent onPressed, onReleased;
 
     public bool buttonPress = false;
     public LightAnimator lanterns;
+    public GameObject incorrectimage;
+    public GameObject correctimage;
 
     public bool iscorrectbutton = false;
 
@@ -32,26 +33,40 @@ public class VRButton : MonoBehaviour
         }
     }
 
-    //Checks if the current collider exiting is the Button and sets off OnReleased event.
-    //It will also call a Coroutine to make the button inactive for however long deadTime is set to.
+
     private void OnTriggerExit(Collider other)
     {
+        StartCoroutine(HideImage());
+
         if (other.tag == "BUTTON" && !_deadTimeActive)
         {
 
             onReleased.Invoke();
             Debug.Log("I have been released");
-            StartCoroutine(WaitForDeadTime());
+            StartCoroutine(WaitForDeadTime(1));
          
             Debug.Log(buttonPress);
+            
+            
         }
     }
 
-    //Locks button activity until deadTime has passed and reactivates button activity.
-    IEnumerator WaitForDeadTime()
+    IEnumerator HideImage()
+    {
+        yield return new WaitForSeconds(2);
+        if (incorrectimage != null && correctimage != null)
+        {
+            incorrectimage.SetActive(false);
+            correctimage.SetActive(false);
+        }
+        
+    }
+
+
+    IEnumerator WaitForDeadTime(float deadtime)
     {
         _deadTimeActive = true;
-        yield return new WaitForSeconds(deadTime);
+        yield return new WaitForSeconds(deadtime);
         _deadTimeActive = false;
     }
 
@@ -68,12 +83,22 @@ public class VRButton : MonoBehaviour
         {
             this.buttonPress = true;
             Debug.Log("this is the correct button");
+            if (correctimage != null)
+            {
+                correctimage.SetActive(true);
+            }
             iscorrectbutton = false;
         } else
         {
+            
             Debug.Log("This is the wrong button. Press the Start button to try again.");
+            if (incorrectimage != null)
+            {
+                incorrectimage.SetActive(true);
+            }
             lanterns.pressedWrongButton();
-           
+
+
         }
         
       
@@ -86,6 +111,7 @@ public class VRButton : MonoBehaviour
     }
 
 
+    
 
 
 }
