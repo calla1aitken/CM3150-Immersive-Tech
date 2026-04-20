@@ -6,7 +6,7 @@ public class DrawCircle : MonoBehaviour
     [SerializeField] float radius = 5f;
     [SerializeField] int subdivisions = 10;
 
-    void MakeCircle()
+    public void MakeCircle()
 
     {
         float angleStep = 2f * Mathf.PI / subdivisions;
@@ -24,8 +24,5 @@ public class DrawCircle : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        MakeCircle();
-    }
+    
 }

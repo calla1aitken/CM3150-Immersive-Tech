@@ -10,9 +10,10 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class stargrab : MonoBehaviour
 {
    
-    [SerializeField] XRGrabInteractable starGrab;
-    [SerializeField] Rigidbody starbody;
-    [SerializeField] GameObject star;
+    public XRGrabInteractable starGrab;
+    public Rigidbody starbody;
+    public GameObject star;
+    public DrawCircle rock;
     Vector3 starlocation;
     Quaternion starrotation;
     private void Start()
@@ -48,6 +49,7 @@ public class stargrab : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         starbody.isKinematic = false;
+        rock.MakeCircle();
     }
 
     private IEnumerator DelayedRelease()
@@ -57,7 +59,7 @@ public class stargrab : MonoBehaviour
         star.transform.rotation = starrotation;
         
         starbody.isKinematic = true;
-
+        rock.gameObject.SetActive(false);
 
     }
 
