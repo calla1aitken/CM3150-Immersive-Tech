@@ -18,6 +18,9 @@ public class Puzzle2StarSpawn : MonoBehaviour
         {
             Debug.Log("Puzzle 2 solved");
             Star.SetActive(true);
+            machine1.makeBlank();
+            machine2.makeBlank();
+            machine3.makeBlank();
         }
     }
 }

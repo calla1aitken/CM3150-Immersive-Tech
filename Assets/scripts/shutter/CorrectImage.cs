@@ -10,11 +10,10 @@ public class CorrectImage : MonoBehaviour
     [SerializeField] MeshRenderer thisRenderer;
     Material correctImage;
     Material thisImage;
+    public Material blank;
 
     public Boolean isCorrect;
 
-
-    [SerializeField] GameObject star;
 
     void Start()
     {
@@ -31,7 +30,12 @@ public class CorrectImage : MonoBehaviour
         {
             Debug.Log("Correct Image");
             isCorrect = true;
-            star.SetActive(true);
+
         }
+    }
+
+    public void makeBlank()
+    {
+        thisRenderer.material = blank;
     }
 }
