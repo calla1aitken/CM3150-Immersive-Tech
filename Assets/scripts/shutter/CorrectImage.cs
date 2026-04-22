@@ -10,7 +10,7 @@ public class CorrectImage : MonoBehaviour
     [SerializeField] MeshRenderer thisRenderer;
     Material correctImage;
     Material thisImage;
-    public Material blank;
+    [SerializeField] Material blank;
 
     public Boolean isCorrect;
 

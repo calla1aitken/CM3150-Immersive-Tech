@@ -5,6 +5,7 @@ public class Lock : MonoBehaviour
     [SerializeField] GameObject key;
     [SerializeField] GameObject door;
     [SerializeField] BoxCollider handle;
+    [SerializeField] AudioSource audioData;
     private bool locked;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,5 +30,6 @@ public class Lock : MonoBehaviour
         handle.enabled = true;
         this.GetComponent<Rigidbody>().isKinematic = false;
         locked = false;
+        audioData.Play();
     }
 }

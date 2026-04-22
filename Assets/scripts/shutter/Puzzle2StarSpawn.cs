@@ -10,6 +10,7 @@ public class Puzzle2StarSpawn : MonoBehaviour
     [SerializeField] CorrectImage machine3;
 
     [SerializeField] GameObject Star;
+    [SerializeField] AudioSource audioData;
 
     void Update()
     {
@@ -18,9 +19,13 @@ public class Puzzle2StarSpawn : MonoBehaviour
         {
             Debug.Log("Puzzle 2 solved");
             Star.SetActive(true);
+            audioData.Play(0);
             machine1.makeBlank();
             machine2.makeBlank();
             machine3.makeBlank();
+            machine1.isCorrect = false;
+            machine2.isCorrect = false;
+            machine3.isCorrect = false;
         }
     }
 }

@@ -8,9 +8,10 @@ public class ShutterAnimation : MonoBehaviour
    
     [SerializeField] Collider lever;
     [SerializeField] Animator shutteranimator;
-
     [SerializeField] GameObject image;
     public Material[] materials = new Material[5];
+    [SerializeField] AudioSource audioData;
+
     int counter = 0;
     float timetowait = 1.5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,6 +22,7 @@ public class ShutterAnimation : MonoBehaviour
     {
         if (collision == lever)
         {
+            audioData.Play(60);
             StartCoroutine("PlayAnimation");
         }
         
@@ -29,7 +31,7 @@ public class ShutterAnimation : MonoBehaviour
 
     IEnumerator PlayAnimation()
     {
-        Debug.Log("lol");
+        Debug.Log("Lever Pulled");
         shutteranimator.SetTrigger("OnLeverPull");
         yield return new WaitForSeconds(timetowait);
         image.GetComponent<MeshRenderer>().material = materials[counter];

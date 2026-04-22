@@ -30,7 +30,10 @@ public class LightAnimator : MonoBehaviour
      bool pressedwrongbutton;
 
     [SerializeField] GameObject Star;
-    
+    [SerializeField] AudioSource lightAudioData;
+    [SerializeField] AudioSource starAudioData;
+
+
     public void Begin()
     {
         
@@ -46,8 +49,9 @@ public class LightAnimator : MonoBehaviour
         int randomIndex = Random.Range(0, 4);
         currentLight = randomIndex;
         lights[currentLight].intensity = 10;
+        lightAudioData.Play(0);
 
-        
+
         // disable the current light
         yield return new WaitForSeconds(lightTime);
         lights[currentLight].intensity = 0;
@@ -105,7 +109,9 @@ public class LightAnimator : MonoBehaviour
                 Debug.Log("You did it. The button sequence is " + bsequenceFull);
                 
                 Star.SetActive(true);
-            };
+                starAudioData.Play(0);
+            }
+            ;
         }
         else
         {
